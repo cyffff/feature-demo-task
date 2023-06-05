@@ -1,0 +1,13 @@
+apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata:
+  namespace: flink
+  name: session-job-only
+spec:
+  deploymentName: session-deployment-only  # 需要与创建的集群名称一致
+  job:
+    jarURI: https://s01.oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=io.github.cyffff&a=feature-demo-task&v=1.0.0-SNAPSHOT&e=jar
+    entryClass: io.github.cyffff.DataStreamJob
+    args:
+    parallelism: 1  # 并行度
+    upgradeMode: stateless

@@ -45,7 +45,7 @@ public class DataStreamJob {
     StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
     DataStream<Tuple2<String, Integer>> dataStream = env
-        .socketTextStream("localhost", 9999)
+        .socketTextStream("10.110.240.102", 9999)
         .flatMap(new Splitter())
         .keyBy(value -> value.f0)
         .window(TumblingProcessingTimeWindows.of(Time.seconds(5)))
