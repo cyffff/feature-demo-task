@@ -4,7 +4,7 @@ metadata:
   name: my-example
   namespace: flink
 spec:
-  image: flink:1.16
+  image: flink-demo-image:flink-demoimage
   flinkVersion: v1_16
   flinkConfiguration:
     taskmanager.numberOfTaskSlots: "2"
